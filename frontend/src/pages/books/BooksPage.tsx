@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { getBooks, type Book } from '../../api/books'
+import { getBooks } from '../../api/books'
+import type { Book } from '../../types'
 
 function BooksPage() {
   const [books, setBooks] = useState<Book[]>([])
