@@ -4,4 +4,4 @@ const { signin, signup } = require('../controllers/authControllers');
 router.post('/signup', signup);
 router.post('/login', signin);
 
-module.exports = reouter;
+module.exports = router;
