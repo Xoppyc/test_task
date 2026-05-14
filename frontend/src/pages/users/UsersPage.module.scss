@@ -1,0 +1,125 @@
+.page {
+  padding    : 2rem 2.5rem;
+  font-family: 'DM Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+.header {
+  display      : flex;
+  align-items  : baseline;
+  gap          : 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size     : 1.25rem;
+  font-weight   : 600;
+  color         : #e2e8f0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin        : 0;
+}
+
+.count {
+  font-size     : 0.75rem;
+  color         : #4a5568;
+  letter-spacing: 0.08em;
+}
+
+.tableWrapper {
+  border       : 1px solid #1e2533;
+  border-radius: 6px;
+  overflow     : hidden;
+  background   : #0d1117;
+}
+
+.table {
+  width          : 100%;
+  border-collapse: collapse;
+  font-size      : 0.8rem;
+
+  thead tr {
+    background   : #161b22;
+    border-bottom: 1px solid #1e2533;
+
+    th {
+      padding       : 0.65rem 1rem;
+      text-align    : left;
+      color         : #4a5568;
+      font-weight   : 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size     : 0.7rem;
+    }
+  }
+}
+
+.row {
+  border-bottom: 1px solid #1a1f2e;
+  cursor       : pointer;
+  transition   : background 0.1s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: #161b22;
+
+    .id {
+      color: #58a6ff;
+    }
+  }
+
+  td {
+    padding       : 0.75rem 1rem;
+    vertical-align: middle;
+  }
+}
+
+.id {
+  color        : #3a4253;
+  font-size    : 0.72rem;
+  max-width    : 180px;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  transition   : color 0.1s ease;
+}
+
+.name {
+  color      : #c9d1d9;
+  font-weight: 500;
+}
+
+.email {
+  color: #6e7681;
+}
+
+.badge {
+  display       : inline-block;
+  padding       : 0.2rem 0.55rem;
+  border-radius : 4px;
+  font-size     : 0.68rem;
+  font-weight   : 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &.admin {
+    background: rgba(210, 153, 34, 0.15);
+    color     : #d29922;
+    border    : 1px solid rgba(210, 153, 34, 0.3);
+  }
+
+  &.user {
+    background: rgba(88, 166, 255, 0.1);
+    color     : #58a6ff;
+    border    : 1px solid rgba(88, 166, 255, 0.2);
+  }
+}
+
+.empty {
+  padding   : 2rem;
+  text-align: center;
+  color     : #4a5568;
+  font-size : 0.85rem;
+}

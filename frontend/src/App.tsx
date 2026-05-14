@@ -4,6 +4,7 @@ import { useAuth } from "./context/authContext"
 import SignupPage from "./pages/signup/SignupPage";
 import BooksPage from "./pages/books/BooksPage";
 import LoginPage from "./pages/login/LoginPage";
+import UsersPage from "./pages/users/UsersPage";
 
 function App() {
   const user = useAuth();
@@ -25,7 +26,7 @@ function App() {
         } />
         <Route path="/users" element={
           <ProtectedRoute user={user.user} adminOnly={true}>
-            <></>
+            <UsersPage />
           </ProtectedRoute>
         } />
         <Route path="/users/:id" element={
