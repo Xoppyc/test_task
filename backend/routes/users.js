@@ -3,7 +3,7 @@ const ctrl = require('../controllers/userControllers');
 const authenticate = require('../middleware/authenticate');
 const authorize = require('../middleware/authorize');
 
-router.get('/users', authenticate, ctrl.getAll);
+router.get('/users', authenticate, authorize('admin'), ctrl.getAll);
 router.post('/users', authenticate, ctrl.getOne);
 router.get('/users/:id', authenticate, authorize('admin'), ctrl.create);
 router.put('/users/:id', authenticate, authorize('admin'), ctrl.update);

@@ -7,9 +7,9 @@ connectDB();
 
 app.use(express.json());
 
-app.use('api/auth', require('./routes/auth'));
-app.use('api/users', require('./routes/users'));
-app.use('api/books', require('./routes/books'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
+app.use('/api/books', require('./routes/books'));
 
 // global error catcher
 app.use((err, req, res, next) => {
@@ -23,4 +23,5 @@ process.on('unhandledRejection', (reason) => {
   process.exit(1);
 });
 
+console.log(`launching at ${process.env.PORT}`);
 app.listen(process.env.PORT ?? 3000);

@@ -9,9 +9,9 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-exports.signin = async (req, res, next) => {
+exports.login = async (req, res, next) => {
   try {
-    const token = await authService.signin(req.body);
+    const token = await authService.login(req.body);
     res.status(200).json({ token });
   } catch (e) {
     next(e);
