@@ -1,0 +1,29 @@
+info:
+  name: Sign Up adminUser
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:5050/api/auth/signup
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Jane",
+        "email": "jane@test.com",
+        "password": "654321",
+        "role": "admin"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: bru.setVar('adminToken', res.body.token);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

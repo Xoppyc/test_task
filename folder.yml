@@ -1,0 +1,6 @@
+info:
+  name: test_task
+  type: folder
+  seq: 1
+
+request: {}

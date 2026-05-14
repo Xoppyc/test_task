@@ -1,0 +1,6 @@
+name: local
+variables:
+  - secret: true
+    name: token
+  - secret: true
+    name: adminToken

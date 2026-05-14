@@ -1,0 +1,29 @@
+info:
+  name: Log In admin
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:5050/api/auth/login
+  body:
+    type: json
+    data: |-
+      {
+        "email": "jane@test.com",
+        "password": "654321"
+      }
+  auth:
+    type: bearer
+    token: "{{adminToken}}"
+
+runtime:
+  scripts:
+    - type: tests
+      code: bru.setVar('token', res.body.token);
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
