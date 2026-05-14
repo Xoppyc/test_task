@@ -1,11 +1,6 @@
 import { createContext, type ReactNode, useState, useContext } from "react"
+import type { User } from "../types"
 
-interface User {
-  id: string
-  name: string
-  email: string
-  role: 'user' | 'admin'
-}
 
 interface AuthContextType {
   user: User | null
@@ -17,6 +12,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | null>(null)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
+  // On page refresh, read the saved user from localStorage
   const [user, setUser] = useState<User | null>(() => {
     const saved = localStorage.getItem('user')
     return saved ? JSON.parse(saved) : null

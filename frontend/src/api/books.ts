@@ -1,11 +1,5 @@
+import type { Book } from '../types'
 import client from './client'
-
-export interface Book {
-  _id: string
-  name: string
-  author: string
-  pageCount: number
-}
 
 export const getBooks = () => client.get<Book[]>('/books')
 export const getBook = (id: string) => client.get<Book>(`/books/${id}`)
