@@ -1,0 +1,62 @@
+:root {
+  // ─── Shared Tab Tokens ────────────────────────────────────────────────────────
+
+  // Dimensions
+  --tab-height: var(--size-7-1);
+  --tab-padding-x: 10px;
+  --tab-margin-top: var(--size-1-1);
+  --tab-margin-bottom: var(--size-1-1);
+  --tab-gap: 6px;
+  --tab-font-size: 13px;
+
+  // Icon threshold (set via JS ResizeObserver)
+  --tab-icon-hide-threshold: 160px;
+
+  // Colors — inactive
+  --tab-bg: transparent;
+  --tab-border: none;
+  --tab-text: var(--text-faint);
+  --tab-bg-hover: var(--background-modifier-hover);
+  --tab-text-hover: var(--text-muted);
+
+  // Colors — active
+  --tab-bg-active: var(--background-primary);
+  --tab-text-active: var(--text-normal);
+
+  // Strip separator
+  --tab-strip-width: 1px;
+  --tab-strip-height: 60%;
+  --tab-strip-color: var(--bg2);
+
+  // X button
+  --tab-x-size: 20px;
+  --tab-x-padding: 2px;
+  --tab-x-radius: 3px;
+  --tab-x-color: var(--text2);
+  --tab-x-color-hover: var(--text);
+  --tab-x-bg-hover: var(--bg4);
+
+  // ─── Horizontal Tab Specific ──────────────────────────────────────────────────
+
+  --tab-h-min-width: 10px;
+  --tab-h-max-width: 277px;
+  --tab-h-radius: var(--radius-md);
+  --tab-h-shadow-hover: none;
+  --tab-h-shadow-hover: none;
+  --tab-h-border-active: none;
+  --tab-h-radius-active: 8px 8px 0 0;
+  --tab-h-border-bottom-width-active: var(--tab-margin-bottom) solid var(--tab-bg-active);
+  --tab-h-margin-active: var(--tab-margin-top) 0 0 0;
+
+  // Inward corner decoration
+  --tab-h-corner-size: 10px;
+  --tab-h-corner-bg: var(--tab-bg-active);
+
+  // ─── Vertical Tab Specific ────────────────────────────────────────────────────
+
+  --tab-v-width: 35px; // collapsed icon-only width
+  --tab-v-width-expanded: 200px; // label revealed on hover
+  --tab-v-radius: var(--radius-md);
+  --tab-v-padding-x: 8px;
+  --tab-v-gap: 8px;
+}

@@ -1,0 +1,16 @@
+:root {
+  --tooltip-background: var(--mono-0-raw);
+  --tooltip-text: var(--mono-100-raw);
+  --tooltip-radius: var(--radius-sm);
+  --tooltip-shadow: var(--shadow-sm);
+}
+
+:root[data-theme='light'] {
+  --tooltip-background: var(--mono-100-raw);
+  --tooltip-text: var(--mono-0-raw);
+}
+
+:root[data-theme='dark'] {
+  --tooltip-background: var(--mono-0-raw);
+  --tooltip-text: var(--mono-100-raw);
+}

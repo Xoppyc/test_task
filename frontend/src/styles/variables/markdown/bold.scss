@@ -1,0 +1,9 @@
+:root {
+  --md-bold-modifier: 200;
+}
+
+
+.cmt-strong {
+  --md-bold-weight: calc(var(--base-weight, var(--font-normal)) + var(--md-bold-modifier));
+  font-weight: var(--md-bold-weight);
+}

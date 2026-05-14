@@ -1,0 +1,214 @@
+/* ============================================================
+   SAP DESIGN TOKENS
+   Architecture:
+   - --base-* : raw scale, theme-specific
+   - --color-* : semantic named colors
+   - Everything else: semantic tokens consuming the above
+   ============================================================ */
+
+:root {
+  /* ── Workspace surfaces ───────────────────────────────── */
+  --background-primary    : var(--base-00);
+  --background-primary-alt: var(--base-05);
+
+  /* ── Shell / chrome surfaces ──────────────────────────── */
+  --background-secondary    : var(--base-05);
+  --background-secondary-alt: var(--base-10);
+
+  /* ── Elevated surfaces (modals, popovers, cards) ─────── */
+  --background-surface         : var(--base-25);
+  --background-surface-elevated: var(--base-30);
+  --background-surface-overlay : var(--base-20);
+
+  /* ── Interactive state modifiers ─────────────────────── */
+  --background-modifier-hover   : oklch(from var(--base-100-raw) l c h / 0.07);
+  --background-modifier-active  : oklch(from var(--base-100-raw) l c h / 0.13);
+  --background-modifier-selected: oklch(from var(--base-100-raw) l c h / 0.10);
+  --background-modifier-focus   : oklch(from var(--base-100-raw) l c h / 0.06);
+  --background-modifier-border  : var(--base-25);
+
+  /* ── Semantic state backgrounds ──────────────────────── */
+  --background-modifier-error      : oklch(55% 0.15 25);
+  --background-modifier-error-rgb  : oklch(55% 0.15 25 / 0.15);
+  --background-modifier-success    : oklch(55% 0.15 145);
+  --background-modifier-success-rgb: oklch(55% 0.15 145 / 0.15);
+  --background-modifier-warning    : oklch(75% 0.15 80);
+  --background-modifier-warning-rgb: oklch(75% 0.15 80 / 0.15);
+  --background-modifier-info       : oklch(60% 0.15 250);
+  --background-modifier-info-rgb   : oklch(60% 0.15 250 / 0.15);
+
+  /* ── Borders ──────────────────────────────────────────── */
+  --border-subtle: var(--base-20);
+  --border-strong: var(--base-30);
+  --border-focus : var(--accent-color);
+  --border-error : var(--color-red);
+
+  /* ── Text ─────────────────────────────────────────────── */
+  --text-normal      : var(--base-100);
+  --text-muted       : var(--base-70);
+  --text-faint       : var(--base-50);
+  --text-on-accent   : color-mix(in srgb, var(--text-normal), var(--text-invert) calc(clamp(0, (0.6 - l) * 1000, 1) * 100%));
+  --text-error       : var(--color-red);
+  --text-success     : var(--color-green);
+  --text-warning     : var(--color-orange);
+  --text-accent      : var(--accent-color);
+  --text-accent-hover: oklch(from var(--accent-color) calc(l + 0.05) c h);
+
+  /* ── Links ────────────────────────────────────────────── */
+  --link-color                      : oklch(60% 0.15 250);
+  --link-color-hover                : oklch(65% 0.15 250);
+  --link-unresolved-color           : var(--base-50);
+  --link-unresolved-decoration-color: var(--base-40);
+  --link-external-color             : oklch(62% 0.14 230);
+  --link-external-color-hover       : oklch(67% 0.14 230);
+
+  /* ── Accent ───────────────────────────────────────────── */
+  --accent-color             : #e47906;
+  /* default lime, overridden by user */
+  --accent-color-hover       : oklch(from var(--accent-color) calc(l + 0.04) c h);
+  --accent-color-active      : oklch(from var(--accent-color) calc(l - 0.04) c h);
+  --accent-color-muted       : oklch(from var(--accent-color) l c h / 0.15);
+  /* ── Scrollbar ────────────────────────────────────────── */
+  --scrollbar-bg             : transparent;
+  --scrollbar-thumb-bg       : oklch(from var(--base-100-raw) l c h / 0.12);
+  --scrollbar-active-thumb-bg: oklch(from var(--base-100-raw) l c h / 0.22);
+
+
+  /* ── Transitions ──────────────────────────────────────── */
+  --duration-fast  : 80ms;
+  --duration-normal: 150ms;
+  --duration-slow  : 250ms;
+  --ease-out       : cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out    : cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Editor ───────────────────────────────────────────── */
+  --editor-font-size  : 15px;
+  --editor-line-height: var(--line-height-relaxed);
+  --editor-max-width  : 720px;
+  --editor-padding-x  : var(--size-40);
+  --editor-padding-y  : var(--size-32);
+
+  /* ── Explorer ─────────────────────────────────────────── */
+  --explorer-item-height: 26px;
+  --explorer-indent     : 16px;
+  --explorer-icon-size  : 14px;
+
+  /* ── Components ───────────────────────────────────────── */
+  --input-height      : 28px;
+  --input-bg          : var(--background-primary);
+  --input-border      : var(--border-subtle);
+  --input-border-focus: var(--accent-color);
+  --input-radius      : var(--radius-m);
+  --input-padding-x   : var(--size-8);
+
+
+  --tag-bg       : var(--accent-color-muted);
+  --tag-color    : var(--accent-color);
+  --tag-radius   : var(--radius-full);
+  --tag-padding-x: var(--size-6);
+  --tag-padding-y: var(--size-2);
+
+  --modal-bg    : var(--background-primary);
+  --modal-border: var(--border-subtle);
+  --modal-radius: var(--radius-l);
+  --modal-shadow: var(--shadow-xl);
+
+  /* ── Domain colors (subtle hue-per-type) ─────────────── */
+  --domain-note      : var(--base-60);
+  --domain-task      : var(--color-orange);
+  --domain-collection: var(--color-cyan);
+  --domain-attachment: var(--base-50);
+  --domain-sapwood   : var(--color-yellow);
+
+  /* ── Mono helpers ─────────────────────────────────────── */
+  --mono-0-raw   : #ffffff;
+  --mono-100-raw : #000000;
+  --mono-0-pure  : #ffffff;
+  --mono-100-pure: #000000;
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+:root[data-theme='light'] {
+  --base-00 : oklch(98.5% 0 0);
+  --base-05 : oklch(96.5% 0 0);
+  --base-10 : oklch(94% 0 0);
+  --base-20 : oklch(91% 0 0);
+  --base-25 : oklch(87% 0 0);
+  --base-30 : oklch(83% 0 0);
+  --base-40 : oklch(78% 0 0);
+  --base-45 : oklch(72% 0 0);
+  --base-50 : oklch(63% 0 0);
+  --base-60 : oklch(56% 0 0);
+  --base-70 : oklch(40% 0 0);
+  --base-100: oklch(18% 0 0);
+
+  --base-100-raw: #000000;
+  --mono-0-raw  : #ffffff;
+  --mono-100-raw: #000000;
+
+  --background-secondary       : var(--base-10);
+  --background-secondary-alt   : var(--base-05);
+  --background-surface         : var(--base-20);
+  --background-surface-elevated: var(--base-25);
+
+  --shadow-s : 0 1px 3px oklch(0% 0 0 / 0.06), 0 1px 2px oklch(0% 0 0 / 0.08);
+  --shadow-m : 0 4px 12px oklch(0% 0 0 / 0.07), 0 2px 4px oklch(0% 0 0 / 0.05);
+  --shadow-l : 0 8px 24px oklch(0% 0 0 / 0.09), 0 4px 8px oklch(0% 0 0 / 0.06);
+  --shadow-xl: 0 16px 48px oklch(0% 0 0 / 0.11), 0 8px 16px oklch(0% 0 0 / 0.07);
+
+  --color-red   : oklch(52% 0.21 27);
+  --color-orange: oklch(64% 0.16 52);
+  --color-yellow: oklch(76% 0.16 88);
+  --color-green : oklch(56% 0.18 140);
+  --color-cyan  : oklch(56% 0.12 200);
+  --color-blue  : oklch(48% 0.22 268);
+  --color-purple: oklch(48% 0.25 300);
+  --color-pink  : oklch(52% 0.22 358);
+}
+
+/* ============================================================
+   DARK THEME
+   ============================================================ */
+:root[data-theme='dark'] {
+  --base-00 : oklch(22% 0 0);
+  --base-05 : oklch(25% 0 0);
+  --base-10 : oklch(28% 0 0);
+  --base-20 : oklch(32% 0 0);
+  --base-25 : oklch(36% 0 0);
+  --base-30 : oklch(41% 0 0);
+  --base-40 : oklch(47% 0 0);
+  --base-45 : oklch(53% 0 0);
+  --base-50 : oklch(60% 0 0);
+  --base-60 : oklch(68% 0 0);
+  --base-70 : oklch(77% 0 0);
+  --base-100: oklch(89% 0 0);
+
+  --base-100-raw: #ffffff;
+  --mono-0-raw  : #000000;
+  --mono-100-raw: #ffffff;
+
+  --background-secondary       : var(--base-05);
+  --background-secondary-alt   : var(--base-10);
+  --background-surface         : var(--base-20);
+  --background-surface-elevated: var(--base-25);
+
+  --shadow-s : 0 1px 3px oklch(0% 0 0 / 0.20), 0 1px 2px oklch(0% 0 0 / 0.24);
+  --shadow-m : 0 4px 12px oklch(0% 0 0 / 0.28), 0 2px 4px oklch(0% 0 0 / 0.20);
+  --shadow-l : 0 8px 24px oklch(0% 0 0 / 0.32), 0 4px 8px oklch(0% 0 0 / 0.24);
+  --shadow-xl: 0 16px 48px oklch(0% 0 0 / 0.40), 0 8px 16px oklch(0% 0 0 / 0.28);
+
+  --color-red   : oklch(60% 0.22 27);
+  --color-orange: oklch(72% 0.17 52);
+  --color-yellow: oklch(83% 0.17 88);
+  --color-green : oklch(73% 0.21 140);
+  --color-cyan  : oklch(73% 0.13 200);
+  --color-blue  : oklch(58% 0.24 268);
+  --color-purple: oklch(58% 0.25 300);
+  --color-pink  : oklch(63% 0.23 358);
+
+  /* dark needs slightly warmer scrollbar */
+  --scrollbar-thumb-bg       : oklch(from var(--base-100-raw) l c h / 0.16);
+  --scrollbar-active-thumb-bg: oklch(from var(--base-100-raw) l c h / 0.28);
+}

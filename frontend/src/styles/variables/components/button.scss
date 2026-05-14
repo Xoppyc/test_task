@@ -1,0 +1,41 @@
+:root {
+  --button-width               : fit-content;
+  --button-height              : fit-content;
+  --button-padding             : var(--size-3-2);
+  --button-background          : transparent;
+  --button-background-hover    : var(--background-modifier-hover);
+  --button-color               : var(--text-normal);
+  --button-color-hover         : var(--text-normal);
+  --button-radius              : var(--radius-md);
+  --button-outline             : 0px solid var(--color-accent);
+  --button-outline-offset      : 0px;
+  --button-outline-focus       : 0px solid var(--color-accent);
+  --button-outline-offset-focus: 0px;
+  --button-justify             : center;
+}
+
+button {
+  display        : flex;
+  align-items    : center;
+  justify-content: var(--button-justify);
+  padding        : var(--button-padding);
+  color          : var(--button-color);
+  background     : var(--button-background);
+  border-radius  : var(--button-radius);
+  outline        : var(--button-outline);
+  outline-offset : var(--button-outline-offset);
+
+  border    : none;
+  cursor    : pointer;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: var(--button-background-hover);
+  }
+
+  &:focus {
+    outline       : none;
+    outline       : var(--button-outline-focus);
+    outline-offset: var(--button-outline-offset-focus);
+  }
+}

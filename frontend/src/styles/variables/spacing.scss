@@ -1,0 +1,32 @@
+:root {
+  /* Fractions of 4px */
+  --size-1-4: 1px;
+  --size-1-2: 2px;  /* Fixed: 1/2 of 4 is 2 */
+  --size-3-4: 3px;
+
+  /* The Base (1/1) */
+  --size-1-1: 4px;
+
+  /* Multiples */
+  --size-3-2: 6px;   /* 1.5x (formerly your 2-3) */
+  --size-2-1: 8px;   /* 2x */
+  --size-5-2: 10px;  /* 2.5x (formerly your 3-3) */
+  --size-3-1: 12px;  /* 3x */
+  --size-4-1: 16px;  /* 4x */
+  --size-5-1: 20px;  /* 5x */
+  --size-6-1: 24px;  /* 6x */
+  --size-7-1: 28px;
+  --size-8-1: 32px;  /* 8x */
+  --size-9-1: 36px;  /* 9x */
+  --size-10-1: 40px; /* 10x */
+  --size-12-1: 48px; /* 12x */
+  --size-16-1: 64px;   /* 16 * 4 */
+  --size-20-1: 80px;   /* 20 * 4 */
+  --size-24-1: 96px;   /* 24 * 4 */
+  --size-32-1: 128px;  /* 32 * 4 */
+  --size-40-1: 160px;  /* 40 * 4 */
+  --size-48-1: 192px;  /* 48 * 4 */
+  --size-64-1: 256px;  /* 64 * 4 */
+  --size-80-1: 320px;  /* 80 * 4 */
+  --size-96-1: 384px;  /* 96 * 4 */
+}
