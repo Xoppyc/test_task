@@ -1,0 +1,78 @@
+$wireframe-gray: #e9e5db;
+$text-main     : #555555;
+$text-muted    : #888888;
+
+.header {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 1.5rem 2rem;
+  background-color: var(--background-secondary);
+  border-bottom   : var(--border-default-width) solid var(--border-subtle);
+}
+
+.logoStub {
+  width           : 120px;
+  height          : 32px;
+  background-color: var(--accent-color);
+  border-radius   : 4px;
+}
+
+.nav {
+  display    : flex;
+  align-items: center;
+  gap        : 2.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color          : var(--text-faint);
+  font-size      : 1.1rem;
+  font-weight    : 500;
+  transition     : opacity 0.2s;
+
+  &:hover {
+    color: var(--text-muted);
+  }
+}
+
+.activeLink {
+  @extend .link;
+  color: var(--text-normal);
+
+  &:hover {
+    color: var(--text-normal);
+  }
+}
+
+.userBadge {
+  color          : var(--text-normal);
+  padding        : 6px 20px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+
+.logoutBtn {
+  background               : none;
+  border                   : none;
+  color                    : var(--text-muted);
+  font-size                : 1.1rem;
+  font-weight              : 500;
+  cursor                   : pointer;
+  padding                  : 0;
+  transition               : opacity 0.2s;
+  --button-background-hover: transparent;
+
+  svg {
+    width: var(--size-3-1);
+  }
+
+  &:hover {
+    color: var(--color-red);
+  }
+}
+
+.profileWrap {
+  display: flex;
+}
