@@ -3,6 +3,7 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import { useAuth } from "./context/authContext"
 import SignupPage from "./pages/signup/SignupPage";
 import BooksPage from "./pages/books/BooksPage";
+import LoginPage from "./pages/login/LoginPage";
 
 function App() {
   const user = useAuth();
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/books" element={
           <ProtectedRoute user={user.user} >
