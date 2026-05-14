@@ -10,7 +10,7 @@ exports.signup = async ({ name, email, password }) => {
   return signToken(user);
 };
 
-exports.signin = async ({ email, password }) => {
+exports.login = async ({ email, password }) => {
   const user = await User.findOne({ email });
   if (!user) throw new Error(`account with this address doesn't exist`);
 
