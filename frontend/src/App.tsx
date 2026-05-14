@@ -6,6 +6,7 @@ import BooksPage from "./pages/books/BooksPage";
 import LoginPage from "./pages/login/LoginPage";
 import UsersPage from "./pages/users/UsersPage";
 import EditUserPage from "./pages/editUser/EditUserPage";
+import BookDetailPage from "./pages/bookDetail/BookDetailPage";
 
 function App() {
   const user = useAuth();
@@ -22,7 +23,12 @@ function App() {
         } />
         <Route path="/books/:id" element={
           <ProtectedRoute user={user.user} >
-            <></>
+            <BookDetailPage />
+          </ProtectedRoute>
+        } />
+        <Route path="/books/:id/edit" element={
+          <ProtectedRoute user={user.user} adminOnly={true}>
+            <BookDetailPage />
           </ProtectedRoute>
         } />
         <Route path="/users" element={
