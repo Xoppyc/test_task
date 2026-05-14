@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router"
 import ProtectedRoute from "./components/ProtectedRoute"
 import { useAuth } from "./context/authContext"
 import SignupPage from "./pages/signup/SignupPage";
+import BooksPage from "./pages/books/BooksPage";
 
 function App() {
   const user = useAuth();
@@ -13,7 +14,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/books" element={
           <ProtectedRoute user={user.user} >
-            <></>
+            <BooksPage />
           </ProtectedRoute>
         } />
         <Route path="/books/:id" element={
