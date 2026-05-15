@@ -22,7 +22,7 @@ There are two `.env` files — one in `backend/`, one in `frontend/`. There's al
 **`backend/.env`**
 
 ```env
-MONGO_URI=mongodb+srv://your_user:your_password@your_cluster.mongodb.net/your_db
+MONGO_URI=mongodb+srv://I_could_have_forgot:To-ReMOvE@that.from.readme.md/?couldHaveGone=prettyBad
 JWT_SECRET=make_this_long_and_random_please
 PORT=5050
 VITE_FRONTEND_URL=http://localhost:5173
