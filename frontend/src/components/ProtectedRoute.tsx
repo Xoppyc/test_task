@@ -11,7 +11,7 @@ function ProtectedRoute({
   user,
   children,
   adminOnly = false,
-  redirectTo = '/books'
+  redirectTo = '/login'
 }: ProtectedRouteProps) {
   if (adminOnly && user?.role != 'admin') { // if page is admin only and user is not an admin
     return (<Navigate to={redirectTo} replace />); // redirect

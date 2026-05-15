@@ -17,7 +17,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route element={<Layout />}>
+        <Route element={
+          <ProtectedRoute user={user.user} >
+            <Layout />
+          </ProtectedRoute>
+        }>
           <Route path="/books" element={
             <ProtectedRoute user={user.user} >
               <BooksPage />
