@@ -1,0 +1,140 @@
+.container {
+  margin   : 0 auto;
+  padding  : 40px 20px;
+  max-width: 1200px;
+}
+
+.backLink {
+  background   : none;
+  border       : none;
+  color        : var(--text-faint);
+  cursor       : pointer;
+  font-size    : 1rem;
+  margin-bottom: 20px;
+  display      : block;
+
+  &:hover {
+    color: var(--text-muted);
+  }
+}
+
+.id {
+  width        : 200px;
+  height       : 24px;
+  color        : var(--color-green);
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : 24px 60px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display       : flex;
+  flex-direction: column;
+  gap           : 8px;
+
+  label {
+    font-size     : 0.75rem;
+    color         : var(--text-normal);
+    letter-spacing: 0.05em;
+  }
+}
+
+.input {
+  width           : 100%;
+  padding         : 12px 16px;
+  border          : var(--border-default-width) solid var(--border-subtle);
+  border-radius   : 10px;
+  font-size       : 1rem;
+  color           : var(--text-normal);
+  background-color: var(--background-primary-alt);
+  outline         : none;
+
+  &:focus {
+    border-color: var(--accent-color);
+  }
+}
+
+.selectWrapper {
+  position: relative;
+
+  select {
+    appearance: none;
+    cursor    : pointer;
+  }
+
+  &::after {
+    content       : "▼";
+    font-size     : 0.7rem;
+    color         : var(--text-normal);
+    position      : absolute;
+    right         : 15px;
+    top           : 50%;
+    transform     : translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+.inputError {
+  @extend .input;
+  border-color: var(--background-modifier-error);
+}
+
+.fieldError {
+  font-size: 0.7rem;
+  color    : var(--background-modifier-error)
+}
+
+.formActions {
+  display        : flex;
+  justify-content: flex-end;
+  gap            : 16px;
+  margin-top     : 24px;
+}
+
+.cancelBtn {
+  padding      : 10px 32px;
+  border       : var(--border-default-width) solid var(--border-subtle);
+  border-radius: 10px;
+  font-size    : 1.1rem;
+  color        : #1a1a1a;
+  cursor       : pointer;
+
+  &:hover {}
+}
+
+.saveBtn {
+  padding      : 10px 48px;
+  border       : var(--border-default-width) solid var(--border-subtle);
+  border-radius: 10px;
+  font-size    : 1.1rem;
+  font-weight  : 600;
+  color        : var(--text-normal);
+  cursor       : pointer;
+
+  &:hover {
+    background-color: var(--accent-color);
+    color           : var(--text-on-accent);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor : not-allowed;
+  }
+}
+
+.errorBanner {
+  background-color: #fff1f2;
+  color           : #e11d48;
+  padding         : 12px;
+  border-radius   : 8px;
+  margin-bottom   : 20px;
+}

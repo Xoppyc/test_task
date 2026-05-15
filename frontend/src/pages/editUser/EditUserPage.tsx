@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import UserForm from "../../components/UserForm";
+import UserForm from "../../components/UserForm/UserForm";
 import { useEffect, useState } from "react";
 import type { User } from "../../types";
 import { getUser } from "../../api/users";
