@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import type { User } from "../../types";
-import { getUsers } from "../../api/users";
+import { deleteUsers, getUsers } from "../../api/users";
 import styles from "./UsersPage.module.scss";
 import { useNavigate } from "react-router";
+import { Trash } from "lucide-react";
 
 function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
@@ -15,6 +16,16 @@ function UsersPage() {
       .then((res) => setUsers(res.data))
       .finally(() => setLoading(false));
   }, []);
+
+  const handleDelete = async (e: React.MouseEvent, id: string) => {
+    e.stopPropagation()
+    try {
+      await deleteUsers(id)
+      setUsers(prev => prev.filter(u => u._id !== id))
+    } catch (err) {
+      console.error('Failed to delete user:', err)
+    }
+  }
 
   return (
     <div className={styles.page}>
@@ -34,6 +45,7 @@ function UsersPage() {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -50,6 +62,11 @@ function UsersPage() {
                     <span className={`${styles.badge} ${styles[u.role]}`}>
                       {u.role}
                     </span>
+                  </td>
+                  <td>
+                    <button className={styles.deleteBtn} onClick={(e) => handleDelete(e, u._id)}>
+                      <Trash /> Delete
+                    </button>
                   </td>
                 </tr>
               ))}

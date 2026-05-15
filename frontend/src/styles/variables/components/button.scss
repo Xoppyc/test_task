@@ -17,6 +17,8 @@
 button {
   display        : flex;
   align-items    : center;
+  width          : var(--button-width);
+  height         : var(--button-height);
   justify-content: var(--button-justify);
   padding        : var(--button-padding);
   color          : var(--button-color);
@@ -31,6 +33,7 @@ button {
 
   &:hover {
     background-color: var(--button-background-hover);
+    color           : var(--button-color-hover);
   }
 
   &:focus {
