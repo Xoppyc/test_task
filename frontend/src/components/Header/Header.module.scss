@@ -21,7 +21,7 @@ $text-muted    : #888888;
 .nav {
   display    : flex;
   align-items: center;
-  gap        : 2.5rem;
+  gap        : 2rem;
 }
 
 .link {
@@ -74,5 +74,6 @@ $text-muted    : #888888;
 }
 
 .profileWrap {
-  display: flex;
+  display    : flex;
+  align-items: center;
 }
