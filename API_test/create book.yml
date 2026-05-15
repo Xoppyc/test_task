@@ -10,9 +10,9 @@ http:
     type: json
     data: |-
       {
-        "name": "Silly Samuel",
-        "author": "mystery man ",
-        "pageCount": 143 
+        "name": "admin mistkae",
+        "author": "penis",
+        "pageCount": 333
       }
   auth:
     type: bearer

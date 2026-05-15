@@ -1,6 +1,6 @@
 # What is this?
 
-Welcome. This is my app — a test task I made to apply for a job. It has users, books, JWT, roles, a frontend, and a backend. It does not have bugs (do not check).
+Welcome. This is my app - a test task I made to apply for a job. It has users, books, JWT, roles, a frontend, and a backend. It does not have bugs (do not check).
 
 # How do I get this to work?
 
@@ -10,14 +10,14 @@ This process has steps, but I promise they're really short.
 
 1. Go [here](https://www.mongodb.com/products/platform/atlas-database) and register or log in.
 2. Hit **"Deploy your cluster"**, pick a name, pick a region with a low carbon footprint (save the planet while you test my app).
-3. Create a database user — don't forget to copy your credentials somewhere. Not just "mentally remember" them.
+3. Create a database user - don't forget to copy your credentials somewhere. Not just "mentally remember" them.
 4. Choose **Drivers**, copy your MongoDB URI.
 
-You'll paste it into `MONGO_URI` in the backend `.env`. Speaking of which —
+You'll paste it into `MONGO_URI` in the backend `.env`. Speaking of which -
 
 ## 2. Environment variables
 
-There are two `.env` files — one in `backend/`, one in `frontend/`. There's also a `.env.example` in each folder with all the keys pre-filled (minus the actual secrets, obviously).
+There are two `.env` files - one in `backend/`, one in `frontend/`. There's also a `.env.example` in each folder with all the keys pre-filled (minus the actual secrets, obviously).
 
 **`backend/.env`**
 
@@ -169,9 +169,9 @@ The `authorize` middleware is a factory function. You pass it a role, it gives y
 router.post('/', authenticate, authorize('admin'), createBook);
 ```
 
-No role, no entry. The backend enforces this regardless of what the frontend shows or hides — because anyone with a terminal can hit an API.
+No role, no entry. The backend enforces this regardless of what the frontend shows or hides - because anyone with a terminal can hit an API.
 
-On the frontend, `AuthContext` stores the logged-in user's role. `ProtectedRoute` uses it to either render the page or redirect. Admins see everything. Common users who manually navigate to `/users` get redirected — their curiosity is appreciated but unproductive.
+On the frontend, `AuthContext` stores the logged-in user's role. `ProtectedRoute` uses it to either render the page or redirect. Admins see everything. Common users who manually navigate to `/users` get redirected - their curiosity is appreciated but unproductive.
 
 ## Error handling
 
@@ -225,5 +225,5 @@ yes. again.
 
 # Interesting facts
 
-1. You may notice `API_test/` — that's a Bruno collection. Bruno is like Postman but open source. I use it because I like the logo. This is a valid engineering decision.
+1. You may notice `API_test/` - that's a Bruno collection. Bruno is like Postman but open source. I use it because I like the logo. This is a valid engineering decision.
 2. I'm mostly a frontend guy. I wrote the entire backend in roughly an hour with very little Express.js experience. Either I'm getting better or the task was well-scoped. Probably both.
